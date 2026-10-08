@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>My Spotify Profile</title>
+        <link rel="stylesheet" href="src/profile.css">
+        <script src="src/script.ts" type="module"></script>
+    </head>
+    <body>
+        <h1>Display your Spotify profile data</h1>
+
+      <section id="profile">
+      <h2>Logged in as <span id="displayName"></span></h2>
+      <span id="avatar"></span>
+      <ul>
+          <li>User ID: <span id="id"></span></li>
+          <li>Email: <span id="email"></span></li>
+          <li>Spotify URI: <a id="uri" href="#"></a></li>
+          <li>Link: <a id="url" href="#"></a></li>
+          <li>Profile Image: <span id="imgUrl"></span></li>
+      </ul>
+      </section>
+
+      <section id="top">
+        <button id="topArtist">top artist</button>
+        <button id="topTrack">top track</button>
+        <button id="followedArtist">followed artists</button>
+        <button id="searchMusic">recherche musique</button>
+
+        <label>Période
+          <select id="timeRange">
+            <option value="short_term">4 dernières semaines</option>
+            <option value="medium_term" selected>6 derniers mois</option>
+            <option value="long_term">1 an</option>
+          </select>
+        </label>
+
+        <div id="topArtistsDiv" hidden>
+          <h2>Top artistes</h2>
+          <ol id="topArtists"></ol>
+        </div>
+
+        <div id="topTracksDiv" hidden>
+          <h2>Top titres</h2>
+          <ol id="topTracks"></ol>
+        </div>
+
+        <div id="followedArtistsDiv" hidden>
+          <h2>Artistes suivis</h2>
+          <ol id="followedArtists"></ol>
+        </div>
+        <div id="searchDiv" hidden>
+          <h2>Recherche musique</h2>
+          <input id="searchInput" type="search" placeholder="Titre, artiste...">
+          <button id="searchButton">Rechercher</button>
+          <ol id="searchResults"></ol>
+          <button id="prevPage" disabled>Précédent</button>
+          <span id="pageInfo"></span>
+          <button id="nextPage" disabled>Suivant</button>
+          <iframe id="player" width="100%" height="152" allow="encrypted-media" hidden></iframe>
+        </div>
+      </section>
+
+    </body>
+</html>
